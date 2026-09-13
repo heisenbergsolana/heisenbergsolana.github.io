@@ -76,7 +76,8 @@
     <p>The wallet contacts you create — name, Solana address, and optional note and category — are stored only in the app's private storage on your device. They are never uploaded anywhere. Uninstalling the app deletes them.</p>
 
     <h2>Network requests</h2>
-    <p>SolContacts makes one kind of request. When you view a contact, the app may query a public Solana RPC endpoint for that address's SOL balance. That request sends the public wallet address to the RPC provider, which may log it under its own privacy policy.</p>
+    <p>SolContacts makes one kind of request. When you view a contact, the app may look up that address's SOL balance. The request goes to a third-party Solana RPC provider &mdash; currently <a href="https://helius.dev">Helius</a> &mdash; and, if that provider is unavailable, to Solana's public endpoint at <code>api.mainnet-beta.solana.com</code>.</p>
+    <p>Either way the request contains the public wallet address being viewed, and the provider may log it under its own privacy policy. It contains nothing that identifies you: no account, no device identifier, and no other contact from your address book.</p>
     <p>No other data is transmitted, ever.</p>
 
     <h2>Private keys</h2>
